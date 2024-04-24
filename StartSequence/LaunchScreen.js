@@ -26,9 +26,8 @@ function startGame() {
   function openSettings() {
     // Redirect to the settings page or display settings overlay
     console.log("Opening settings...");
-    console.log("Ur stupid");
-    console.log("New lione")
-    window.location.href = "settings.html";
+    var myModal = new bootstrap.Modal(document.getElementById('volumeModal'));
+    myModal.show();
   }
 
   function showCredits() {
