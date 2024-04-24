@@ -33,8 +33,8 @@ function startGame() {
   function showCredits() {
     // Display the credits overlay or navigate to the credits page
     console.log("Showing credits...");
-    // For demonstration purposes, let's just navigate to a new page
-    window.location.href = "credits.html";
+    var myModal = new bootstrap.Modal(document.getElementById('creditsModal'));
+    myModal.show();
   }
 
   function exitGame() {
