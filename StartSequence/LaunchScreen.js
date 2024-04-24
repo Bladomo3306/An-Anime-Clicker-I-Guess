@@ -19,8 +19,7 @@ document.addEventListener("DOMContentLoaded", function() {
 function startGame() {
     // Redirect to the game page or start the game logic
     console.log("Starting the game...");
-    // For demonstration purposes, let's just navigate to a new page
-    window.location.href = "game.html";
+    window.location.href = "../Game/Clicker.html";
   }
 
   function openSettings() {
