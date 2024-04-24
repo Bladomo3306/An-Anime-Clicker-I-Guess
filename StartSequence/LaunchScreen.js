@@ -26,7 +26,8 @@ function startGame() {
   function openSettings() {
     // Redirect to the settings page or display settings overlay
     console.log("Opening settings...");
-    // For demonstration purposes, let's just navigate to a new page
+    console.log("Ur stupid");
+    console.log("New lione")
     window.location.href = "settings.html";
   }
 
