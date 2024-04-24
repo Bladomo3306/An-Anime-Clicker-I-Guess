@@ -92,11 +92,6 @@
     filter: invert(1);
 }
 
-.btn-primary-color {
-    background-color: rgb(244, 69, 69) !important;
-    border-color: rgb(244, 69, 69) !important;
-}
-
 .modal-header {
   background-color: #740f0f;
   color: white;
