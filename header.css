@@ -4,3 +4,22 @@
     margin-left: auto !important;
     margin-right: auto !important;
 }
+
+.modal-body {
+    background-color: #b32222;
+    color: white;
+}
+
+.btn-close {
+    filter: invert(1);
+}
+
+.modal-header {
+  background-color: #740f0f;
+  color: white;
+}
+
+.modal-footer {
+  background-color: #740f0f !important;
+  color: white !important;
+}

@@ -12,6 +12,7 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <script src="Shop.js" defer></script>
     <script src="../header.js" defer></script>
+    <script src="../music.js" defer></script>
 </head>
 <audio preload="auto" src="../Audio/backgroundMusic.mp3" loop="true" id="backgroundMusic"autobuffer>
     Unsupported in Firefox
@@ -29,7 +30,8 @@
             <div class="col-sm-3 text-end">
                 <button class="btn btn-primary-color me-2" onclick="reopenClicker()">Clicker</button>
                 <button class="btn btn-primary-color me-2">Shop</button>
-                <button class="btn btn-primary-color" onclick="openAchievements()">Achievements</button>
+                <button class="btn btn-primary-color me-2" onclick="openAchievements()">Achievements</button>
+                <button class="btn btn-primary-color" onclick="openSettings()">Settings</button>
             </div>
         </div>
     </header>
@@ -40,6 +42,29 @@
         </div>
         <div id="shop-container">
             <!-- Dynamically loads this html -->
+        </div>
+    </div>
+
+    <div class="modal fade" id="volumeModal" tabindex="-1" aria-labelledby="volumeModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="volumeModalLabel">Volume Control</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <form>
+                        <div class="mb-3">
+                            <label for="volumeSlider" class="form-label">Volume</label>
+                            <input type="range" class="form-range" id="volumeSlider" min="0" max="100" step="1" oninput="updateVolume(this.value)">
+                        </div>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-primary-color text-white">Save Changes</button>
+                </div>
+            </div>
         </div>
     </div>
 </body>
