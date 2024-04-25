@@ -32,32 +32,11 @@
     </header>
     <div class="mt-5"></div>
         <div class="tabs-container">
-            <div class="tab active" id="upgrades-tab">Upgrades</div>
-            <div class="tab" id="crates-tab">Crates</div>
+            <div class="tab active" id="upgrades-tab" onclick="openUpgrades()">Upgrades</div>
+            <div class="tab" id="crates-tab" onclick="openCrates()">Crates</div>
         </div>
         <div id="shop-container">
-            <div class="row">
-                <div class="col-md-6 mt-2">
-                    <div class="shop-item">
-                        <div class="item-info">
-                            <h4 class="item-name">Extra Clicks</h4>
-                            <p class="item-description">Increases your dabloons per click.</p>
-                            <span class="item-price">Cost: 50 dabloons</span>
-                        </div>
-                        <button class="shop-button">Buy</button>
-                    </div>
-                </div>
-                <div class="col-md-6 mt-2">
-                    <div class="shop-item">
-                        <div class="item-info">
-                            <h4 class="item-name">+1 click a second</h4>
-                            <p class="item-description">Adds 1 dabloon a second.</p>
-                            <span class="item-price">Cost: 100 dabloons</span>
-                        </div>
-                        <button class="shop-button">Buy</button>
-                    </div>
-                </div>
-            </div>
+            <!-- Dynamically loads this html -->
         </div>
     </div>
 </body>
