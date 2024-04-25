@@ -1,3 +1,8 @@
 .header-container {
     background-color: gray;
 }
+
+#body {
+    opacity: 0;
+    transition: 2s;
+}
