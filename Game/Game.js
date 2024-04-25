@@ -1,7 +1,12 @@
 
 document.addEventListener("DOMContentLoaded", function() {
-    fadeInBackgrounds()
-    
+    fadeInBackgrounds();
+    addShiroEL();
+    addGojoEL();
+    if (localStorage.getItem('BlossomCount') == null) {
+        localStorage.setItem('BlossomCount', 0)
+    }
+    updateBlossomsLabel()
 });
 
 function fadeInBackgrounds() {
@@ -33,4 +38,26 @@ function fadeInBackgrounds() {
         background.style.display = "block";
         background.style.opacity = 1;
     }
+}
+
+function addShiroEL() {
+    var audio = new Audio('../Audio/Darling ohayo.mp3');
+    var savedVolume = localStorage.getItem("audioVolume") || 0.1;
+    audio.volume = savedVolume;
+    document.getElementById('Shiro').addEventListener('click', function (e) {
+        audio.play()
+    });
+    
+};
+
+function addGojoEL() {
+    blossoms = Number(localStorage.getItem('BlossomCount'));
+    document.getElementById('clickerButton').addEventListener('click', function (e) {
+        localStorage.setItem('BlossomCount', blossoms += 1);
+        updateBlossomsLabel()
+    });
+}
+
+function updateBlossomsLabel() {
+    document.getElementById("BlossomAmt").innerText = localStorage.getItem('BlossomCount');
 }

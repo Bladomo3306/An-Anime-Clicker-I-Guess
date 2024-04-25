@@ -21,3 +21,16 @@
     z-index: 999; /* Ensure it's above other content */
 
 }
+
+#currencyLabel {
+    position: absolute;
+    left: 50%;
+    transform: translate(-50%);
+    font-size: 45px;
+}
+#clickerButton {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -35%);
+}
