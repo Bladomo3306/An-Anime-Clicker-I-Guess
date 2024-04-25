@@ -2,7 +2,7 @@ function updateVolume(value) {
     var audio = document.getElementById("backgroundMusic");
     var newVolume = value / 100;
     audio.volume = newVolume;
-    localStorage.setItem("audioVolume", newVolume); // Save the new volume to localStorage
+    localStorage.setItem("audioVolume", newVolume);
 }
 
 
