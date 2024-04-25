@@ -6,6 +6,9 @@ document.addEventListener("DOMContentLoaded", function() {
     if (localStorage.getItem('BlossomCount') == null) {
         localStorage.setItem('BlossomCount', 0)
     }
+    if (localStorage.getItem('BlossomPerClick') == null) {
+        localStorage.setItem('BlossomPerClick', 1)
+    }
     updateBlossomsLabel()
 });
 
@@ -53,7 +56,7 @@ function addShiroEL() {
 function addGojoEL() {
     blossoms = Number(localStorage.getItem('BlossomCount'));
     document.getElementById('clickerButton').addEventListener('click', function (e) {
-        localStorage.setItem('BlossomCount', blossoms += 1);
+        localStorage.setItem('BlossomCount', blossoms += Number(localStorage.getItem('BlossomPerClick')));
         updateBlossomsLabel()
     });
 }

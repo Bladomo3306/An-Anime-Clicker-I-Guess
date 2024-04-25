@@ -143,4 +143,103 @@ function openCrates() {
 
 window.onload = function() {
     openUpgrades();
+    initializePurchasedItems();
 };
+
+document.addEventListener("DOMContentLoaded", function() {
+    setupMutationObserver();
+    document.body.addEventListener('click', function(event) {
+        if (event.target && event.target.classList.contains('shop-button')) {
+            const button = event.target;
+            const itemNameElement = button.parentElement.querySelector('.item-name');
+            const itemId = itemNameElement ? itemNameElement.innerText : 'Unknown Item';
+            const itemCostElement = button.parentElement.querySelector('.item-price');
+            let itemCost = parseInt(itemCostElement.innerText.replace(/[^0-9]/g, ''));
+            const currentBlossoms = parseInt(localStorage.getItem('BlossomCount'));
+
+            if (currentBlossoms >= itemCost) {
+                localStorage.setItem('BlossomCount', currentBlossoms - itemCost);
+                updatePurchasedItems(itemId);
+                updateItemCost(itemId, itemCostElement);
+                alert('Purchase Successful!');
+            } else {
+                alert('Not enough Blossoms!');
+            }
+        }
+    });
+});
+
+function setupMutationObserver() {
+    const observer = new MutationObserver((mutations) => {
+        for (let mutation of mutations) {
+            for (let node of mutation.addedNodes) {
+                if (node.nodeType === 1 && node.querySelector('.shop-item')) {
+                    initializeItemCosts();
+                    console.log('Shop items detected and initializeItemCosts called.');
+                    break;
+                }
+            }
+        }
+    });
+
+    observer.observe(document.body, {
+        childList: true,
+        subtree: true
+    });
+}
+
+function initializeItemCosts() {
+    const items = document.querySelectorAll('.shop-item');
+    console.log("Number of items found:", items.length);
+
+    items.forEach(item => {
+        const itemName = item.querySelector('.item-name').innerText;
+        const itemCostElement = item.querySelector('.item-price');
+        let storedCost = localStorage.getItem(itemName);
+
+        if (storedCost) {
+            let parsedCost = parseInt(storedCost);
+            if (!isNaN(parsedCost)) {
+                itemCostElement.innerText = `Cost: ${parsedCost} Blossoms`;
+            } else {
+                console.error(`Stored cost for ${itemName} is not a valid number:`, storedCost);
+            }
+        } else {
+            let initialCost = parseInt(itemCostElement.innerText.replace(/[^0-9]/g, ''));
+            localStorage.setItem(itemName, initialCost);
+        }
+    });
+}
+
+function updateItemCost(itemId, itemCostElement) {
+    let currentCost = parseInt(localStorage.getItem(itemId));
+    console.log(`Current cost for ${itemId}:`, currentCost);
+    if (!isNaN(currentCost)) {
+        let newCost = Math.floor(currentCost * 1.5);
+        localStorage.setItem(itemId, newCost);
+        itemCostElement.innerText = `Cost: ${newCost} Blossoms`;
+    } else {
+        console.error('Invalid cost retrieved from localStorage:', currentCost);
+    }
+}
+
+function initializePurchasedItems() {
+    if (!localStorage.getItem('purchasedItems')) {
+        localStorage.setItem('purchasedItems', JSON.stringify({}));
+    }
+}
+
+function updatePurchasedItems(itemId) {
+    const purchasedItems = JSON.parse(localStorage.getItem('purchasedItems') || "{}");
+    if (purchasedItems[itemId]) {
+        purchasedItems[itemId] += 1;
+    } else {
+        purchasedItems[itemId] = 1;
+    }
+    localStorage.setItem('purchasedItems', JSON.stringify(purchasedItems));
+
+    if (itemId === "Ramen Noodles") {
+        let currentBlossomPerClick = parseInt(localStorage.getItem('BlossomPerClick'));
+        localStorage.setItem('BlossomPerClick', currentBlossomPerClick + purchasedItems[itemId]);
+    }
+}
