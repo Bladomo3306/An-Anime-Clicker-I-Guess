@@ -19,6 +19,7 @@
       background: linear-gradient(rgba(0, 0, 0, 0.9), rgba(0, 0, 0, 0.9)), url('Pictures/background.jpg');
       background-size: 100%, 100%;
     background-position: center;
+    transition: opacity 2s;
 }
 #intro {
     font-family: Arial, sans-serif;

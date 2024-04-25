@@ -19,7 +19,16 @@ document.addEventListener("DOMContentLoaded", function() {
 function startGame() {
     // Redirect to the game page or start the game logic
     console.log("Starting the game...");
-    window.location.href = "../Game/Clicker.html";
+    var StartScreen = document.getElementById("StartScreen");
+     introText.style.display = "block";
+
+      StartScreen.style.opacity = 0;
+
+    setTimeout(function() {
+        window.location.href = "../Game/Clicker.html";
+    }, 2500);
+
+    
   }
 
   function openSettings() {
