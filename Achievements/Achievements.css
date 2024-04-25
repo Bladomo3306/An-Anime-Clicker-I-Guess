@@ -1,0 +1,44 @@
+#shop-container {
+    max-width: 80%;
+    height: 80vh;
+    margin: auto;
+    overflow-y: auto;
+    background-color: #f8f9fa;
+    border: 1px solid #dee2e6;
+    padding: 20px;
+    border-radius: 8px;
+    padding-top: 20px;
+}
+
+.shop-item {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    background-color: #fff;
+    margin-bottom: 10px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+.item-info {
+    flex-grow: 1;
+    padding-right: 10px;
+}
+.shop-button {
+    padding: 5px 20px;
+    font-size: 1.2rem;
+    color: white;
+    background-color: #007bff;
+    border: none;
+    border-radius: 5px;
+}
+
+.achievement-locked .item-name {
+    color: grey;
+}
+
+.achievement-locked {
+    opacity: 0.5;
+    background-color: #f0f0f0;
+}
