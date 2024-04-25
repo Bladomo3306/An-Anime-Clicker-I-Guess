@@ -23,9 +23,9 @@ function startGame() {
      introText.style.display = "block";
 
       StartScreen.style.opacity = 0;
-
+    
     setTimeout(function() {
-        window.location.href = "../Game/Clicker.html";
+        window.location.href = "../Game/Clicker.html?Open";
     }, 2500);
 
     
