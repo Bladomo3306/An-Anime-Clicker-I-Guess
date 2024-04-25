@@ -6,6 +6,7 @@ function openShop() {
 }
 function reopenClicker() {
     window.location.href = "../Game/Clicker.html";
+    setMusic();
 }
 function openAchievements() {
     window.location.href = "../Achievements/Achievements.html";
@@ -13,7 +14,9 @@ function openAchievements() {
 }
 function setMusic() {
     var music = document.getElementById("backgroundMusic");
-    localStorage.setItem("MusicTime", music.currentTime);
+    if (music.paused == false){
+        localStorage.setItem("MusicTime", music.currentTime);
+    }
 }
 
 function openSettings() {

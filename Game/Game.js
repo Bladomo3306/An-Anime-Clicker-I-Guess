@@ -41,18 +41,24 @@ function fadeInBackgrounds() {
 }
 
 function addShiroEL() {
-    var audio = new Audio('../Audio/Darling ohayo.mp3');
-    var savedVolume = localStorage.getItem("audioVolume") || 0.1;
-    audio.volume = savedVolume;
+    
     document.getElementById('Shiro').addEventListener('click', function (e) {
-        audio.play()
+        var ohayoAudio = new Audio('../Audio/Darling ohayo.mp3');
+        var savedVolume = localStorage.getItem("audioVolume") || 0.1;
+        ohayoAudio.volume = savedVolume;
+        ohayoAudio.play()
     });
     
 };
 
 function addGojoEL() {
     blossoms = Number(localStorage.getItem('BlossomCount'));
+    
     document.getElementById('clickerButton').addEventListener('click', function (e) {
+        // var yowaimo = new Audio('../Audio/yowaimo.mp3')
+        // var savedVolume = localStorage.getItem("audioVolume") || 0.1;
+        // yowaimo.volume = savedVolume;
+        // yowaimo.play()
         localStorage.setItem('BlossomCount', blossoms += 1);
         updateBlossomsLabel()
     });
