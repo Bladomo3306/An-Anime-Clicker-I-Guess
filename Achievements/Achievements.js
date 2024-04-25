@@ -22,3 +22,12 @@ function updateAchievements() {
 window.onload = function() {
     updateAchievements();
 };
+document.addEventListener('click', function(event) {
+    var audio = document.getElementById("backgroundMusic")
+    audio.volume = 0.1;
+    if (audio.paused) {
+        curTime = localStorage.getItem("MusicTime");
+        audio.currentTime = curTime;
+        audio.play();
+    }
+});
