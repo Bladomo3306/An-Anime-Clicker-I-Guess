@@ -63,7 +63,7 @@ function addGojoEL() {
         // yowaimo.volume = savedVolume;
         // yowaimo.play()
         localStorage.setItem('BlossomCount', blossoms += Number(localStorage.getItem('BlossomPerClick')));
-        updateBlossomsLabel()
+        updateBlossomsLabel();
     });
 }
 
