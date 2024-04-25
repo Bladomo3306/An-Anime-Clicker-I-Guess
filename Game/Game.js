@@ -6,6 +6,9 @@ document.addEventListener("DOMContentLoaded", function() {
     if (localStorage.getItem('BlossomCount') == null) {
         localStorage.setItem('BlossomCount', 0)
     }
+    if (localStorage.getItem('BlossomPerClick') == null) {
+        localStorage.setItem('BlossomPerClick', 1)
+    }
     updateBlossomsLabel()
 });
 
@@ -59,7 +62,7 @@ function addGojoEL() {
         // var savedVolume = localStorage.getItem("audioVolume") || 0.1;
         // yowaimo.volume = savedVolume;
         // yowaimo.play()
-        localStorage.setItem('BlossomCount', blossoms += 1);
+        localStorage.setItem('BlossomCount', blossoms += Number(localStorage.getItem('BlossomPerClick')));
         updateBlossomsLabel()
     });
 }
