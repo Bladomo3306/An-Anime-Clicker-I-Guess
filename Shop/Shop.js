@@ -240,6 +240,6 @@ function updatePurchasedItems(itemId) {
 
     if (itemId === "Ramen Noodles") {
         let currentBlossomPerClick = parseInt(localStorage.getItem('BlossomPerClick'));
-        localStorage.setItem('BlossomPerClick', currentBlossomPerClick + purchasedItems[itemId]);
+        localStorage.setItem('BlossomPerClick', currentBlossomPerClick + 1);
     }
 }
