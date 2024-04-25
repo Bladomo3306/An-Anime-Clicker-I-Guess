@@ -5,3 +5,6 @@ function openShop() {
 function reopenClicker() {
     window.location.href = "../Game/Clicker.html";
 }
+function openAchievements() {
+    window.location.href = "../Achievements/Achievements.html";
+}
