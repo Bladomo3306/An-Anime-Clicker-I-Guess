@@ -3,10 +3,14 @@
     height: 80vh;
     margin: auto;
     overflow-y: auto;
-    background-color: #f8f9fa;
+    background-color: #f7a4fa;
     border: 1px solid #dee2e6;
     padding: 20px;
     border-radius: 8px;
+}
+
+#body {
+    background-color: #b948aa;
 }
 
 .shop-item {
@@ -14,10 +18,10 @@
     flex-wrap: wrap;
     align-items: center;
     justify-content: space-between;
-    background-color: #fff;
+    background-color: #ffffff;
     margin-bottom: 10px;
     padding: 10px;
-    border: 1px solid #ccc;
+    border: 1px solid #cd4effc5;
     border-radius: 5px;
 }
 .item-info {
@@ -28,7 +32,7 @@
     padding: 5px 20px;
     font-size: 1.2rem;
     color: white;
-    background-color: #007bff;
+    background-color: #ff4949;
     border: none;
     border-radius: 5px;
 }
@@ -43,8 +47,8 @@
     display: inline-block;
     margin-right: 5px;
     padding: 5px 15px;
-    background-color: #dee2e6;
-    border: 1px solid #ccc;
+    background-color: #fa96c0a6;
+    border: 1px solid #cccccc;
     cursor: pointer;
     border-top-left-radius: 5px;
     border-top-right-radius: 5px;
@@ -52,12 +56,19 @@
 }
 
 .tab.active {
-    background-color: #fff;
+    background-color: #fdbdd8a6;
     padding-top: 10px;
     border-bottom: none;
 }
 
 #shop-container {
-    border: 1px solid #ccc;
+    border: 1px solid #fa94fd;
     padding-top: 20px;
+}
+
+#BlossomAmt {
+    font: Helvetica;
+    font-size: 25px;
+    margin-left: -20px; /* Adjust as needed */
+    margin-bottom: 20px;
 }

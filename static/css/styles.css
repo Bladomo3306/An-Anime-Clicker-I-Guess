@@ -1,9 +1,9 @@
 .btn-primary-color {
-    background-color: rgb(244, 69, 69) !important;
-    border-color: rgb(244, 69, 69) !important;
+    background-color: rgb(207, 61, 117) !important;
+    border-color: rgb(0, 0, 0) !important;
 }
 
 .btn-primary-color:hover, .btn-primary-color:focus {
-    background-color: rgb(204, 57, 57) !important;
-    border-color: rgb(204, 57, 57) !important;
+    background-color: rgb(158, 55, 94) !important;
+    border-color: rgb(0, 0, 0) !important;
 }
