@@ -243,8 +243,44 @@ function updatePurchasedItems(itemId) {
         let currentBlossomPerClick = parseInt(localStorage.getItem('BlossomPerClick'));
         localStorage.setItem('BlossomPerClick', currentBlossomPerClick + 1);
     }
-}
-
-function updateBlossomsLabel() {
-    document.getElementById("BlossomAmt").innerText = localStorage.getItem('BlossomCount');
+    if (itemId === "Rem") {
+        let currentBlossomsPerSecond = parseInt(localStorage.getItem('BlossomPerSecond'));
+        localStorage.setItem('BlossomPerSecond', currentBlossomsPerSecond + 1)
+    }
+    if (itemId === "Shadow Clone Jutsu") {
+        let currentBlossomsPerSecond = parseInt(localStorage.getItem('BlossomPerSecond'));
+        localStorage.setItem('BlossomPerSecond', currentBlossomsPerSecond + 5)
+    }
+    if (itemId === "Astolfo Body Pillow") {
+        let currentBlossomsPerSecond = parseInt(localStorage.getItem('BlossomPerSecond'));
+        localStorage.setItem('BlossomPerSecond', currentBlossomsPerSecond + 10)
+    }
+    if (itemId === "Cherry Blossom Tree") {
+        let currentBlossomsPerSecond = parseInt(localStorage.getItem('BlossomPerSecond'));
+        localStorage.setItem('BlossomPerSecond', currentBlossomsPerSecond + 20)
+    }
+    if (itemId === "Mappa") {
+        let currentBlossomsPerSecond = parseInt(localStorage.getItem('BlossomPerSecond'));
+        localStorage.setItem('BlossomPerSecond', currentBlossomsPerSecond + 50)
+    }
+    if (itemId === "Haki") {
+        let currentBlossomsPerClick = parseInt(localStorage.getItem('BlossomPerClick'));
+        localStorage.setItem('BlossomPerClick', currentBlossomsPerClick * 2)
+    }
+    if (itemId === "Geass") {
+        let currentBlossomsPerSecond = parseInt(localStorage.getItem('BlossomPerSecond'));
+        localStorage.setItem('BlossomPerSecond', currentBlossomsPerSecond + 150)
+    }
+    if (itemId === "Founding Titan") {
+        let currentBlossomsPerSecond = parseInt(localStorage.getItem('BlossomPerSecond'));
+        localStorage.setItem('BlossomPerSecond', currentBlossomsPerSecond + 300)
+    }
+    if (itemId === "All for One") {
+        let currentBlossomsPerSecond = parseInt(localStorage.getItem('BlossomPerSecond'));
+        localStorage.setItem('BlossomPerSecond', currentBlossomsPerSecond + 600)
+    }
+    if (itemId === "STEEEAAAAAAALLLLL!!!") {
+        let currentBlossomsPerSecond = parseInt(localStorage.getItem('BlossomPerSecond'));
+        localStorage.setItem('BlossomPerSecond', currentBlossomsPerSecond + 1200)
+    }
 }
