@@ -3,7 +3,7 @@ document.addEventListener("DOMContentLoaded", function() {
     addShiroEL();
     addGojoEL();
     if (localStorage.getItem('BlossomCount') == null) {
-        localStorage.setItem('BlossomCount', 10000000000000)
+        localStorage.setItem('BlossomCount', 0)
     }
     if (localStorage.getItem('BlossomPerClick') == null) {
         localStorage.setItem('BlossomPerClick', 1)
