@@ -58,17 +58,23 @@ function addShiroEL() {
 };
 
 function addGojoEL() {
-    blossoms = Number(localStorage.getItem('BlossomCount'));
-    
+    //revamped this code to work with the async function.
     document.getElementById('clickerButton').addEventListener('click', function (e) {
+        var currentBlossoms = Number(localStorage.getItem('BlossomCount'));
+        var additionalBlossoms = Number(localStorage.getItem('BlossomPerClick'));
+        
+        var newBlossomCount = currentBlossoms + additionalBlossoms;
+        localStorage.setItem('BlossomCount', newBlossomCount);
+
         // var yowaimo = new Audio('../Audio/yowaimo.mp3')
         // var savedVolume = localStorage.getItem("audioVolume") || 0.1;
         // yowaimo.volume = savedVolume;
         // yowaimo.play()
-        localStorage.setItem('BlossomCount', blossoms += Number(localStorage.getItem('BlossomPerClick')));
+        
         updateBlossomsLabel();
     });
 }
+
 
 // function updateBlossomsLabel() {
 //     document.getElementById("BlossomAmt").innerText = localStorage.getItem('BlossomCount');
