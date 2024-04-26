@@ -245,7 +245,14 @@ function updatePurchasedItems(itemId) {
 
     if (itemId === "Ramen Noodles") {
         let currentBlossomPerClick = parseInt(localStorage.getItem('BlossomPerClick'));
-        localStorage.setItem('BlossomPerClick', currentBlossomPerClick + 1);
+        if (purchasedItems["Haki"] >= 1) {
+            let hakiCount = purchasedItems["Haki"];
+            let multiplier = Math.pow(2, hakiCount);
+            console.log(multiplier)
+            localStorage.setItem('BlossomPerClick', currentBlossomPerClick + multiplier);
+        } else {
+            localStorage.setItem('BlossomPerClick', currentBlossomPerClick + 1);
+        }
     }
     if (itemId === "Rem") {
         let currentBlossomsPerSecond = parseInt(localStorage.getItem('BlossomPerSecond'));

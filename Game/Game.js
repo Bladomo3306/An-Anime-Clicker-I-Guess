@@ -1,10 +1,9 @@
-
 document.addEventListener("DOMContentLoaded", function() {
     fadeInBackgrounds();
     addShiroEL();
     addGojoEL();
     if (localStorage.getItem('BlossomCount') == null) {
-        localStorage.setItem('BlossomCount', 0)
+        localStorage.setItem('BlossomCount', 10000000000000)
     }
     if (localStorage.getItem('BlossomPerClick') == null) {
         localStorage.setItem('BlossomPerClick', 1)
@@ -70,7 +69,7 @@ function addGojoEL() {
         // var savedVolume = localStorage.getItem("audioVolume") || 0.1;
         // yowaimo.volume = savedVolume;
         // yowaimo.play()
-        
+
         updateBlossomsLabel();
     });
 }
