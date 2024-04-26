@@ -24,3 +24,8 @@ function openSettings() {
     var myModal = new bootstrap.Modal(document.getElementById('volumeModal'));
     myModal.show();
   }
+
+  function mainMenu() {
+    window.location.href = "../StartSequence/LaunchScreen.html";
+    setMusic();
+}
