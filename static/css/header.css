@@ -6,7 +6,7 @@
 }
 
 .modal-body {
-    background-color: #b32222;
+    background-color: #f34bce;
     color: white;
 }
 
@@ -15,11 +15,11 @@
 }
 
 .modal-header {
-  background-color: #740f0f;
+  background-color: #be0cac;
   color: white;
 }
 
 .modal-footer {
-  background-color: #740f0f !important;
+  background-color: #be0cac !important;
   color: white !important;
 }
