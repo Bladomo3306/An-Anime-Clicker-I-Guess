@@ -144,6 +144,7 @@ function openCrates() {
 window.onload = function() {
     openUpgrades();
     initializePurchasedItems();
+    updateBlossomsLabel();
 };
 
 document.addEventListener("DOMContentLoaded", function() {
@@ -161,7 +162,7 @@ document.addEventListener("DOMContentLoaded", function() {
                 localStorage.setItem('BlossomCount', currentBlossoms - itemCost);
                 updatePurchasedItems(itemId);
                 updateItemCost(itemId, itemCostElement);
-                alert('Purchase Successful!');
+                updateBlossomsLabel();
             } else {
                 alert('Not enough Blossoms!');
             }
@@ -242,4 +243,8 @@ function updatePurchasedItems(itemId) {
         let currentBlossomPerClick = parseInt(localStorage.getItem('BlossomPerClick'));
         localStorage.setItem('BlossomPerClick', currentBlossomPerClick + 1);
     }
+}
+
+function updateBlossomsLabel() {
+    document.getElementById("BlossomAmt").innerText = localStorage.getItem('BlossomCount');
 }
