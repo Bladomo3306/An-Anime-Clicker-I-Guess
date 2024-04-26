@@ -1,4 +1,3 @@
-
 document.addEventListener("DOMContentLoaded", function() {
     fadeInBackgrounds();
     addShiroEL();
@@ -70,7 +69,7 @@ function addGojoEL() {
         // var savedVolume = localStorage.getItem("audioVolume") || 0.1;
         // yowaimo.volume = savedVolume;
         // yowaimo.play()
-        
+
         updateBlossomsLabel();
     });
 }
