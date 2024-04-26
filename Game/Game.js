@@ -9,6 +9,9 @@ document.addEventListener("DOMContentLoaded", function() {
     if (localStorage.getItem('BlossomPerClick') == null) {
         localStorage.setItem('BlossomPerClick', 1)
     }
+    if (localStorage.getItem('BlossomPerSecond') == null) {
+        localStorage.setItem('BlossomPerSecond', 0)
+    }
     updateBlossomsLabel()
 });
 
@@ -67,6 +70,6 @@ function addGojoEL() {
     });
 }
 
-function updateBlossomsLabel() {
-    document.getElementById("BlossomAmt").innerText = localStorage.getItem('BlossomCount');
-}
+// function updateBlossomsLabel() {
+//     document.getElementById("BlossomAmt").innerText = localStorage.getItem('BlossomCount');
+// }
