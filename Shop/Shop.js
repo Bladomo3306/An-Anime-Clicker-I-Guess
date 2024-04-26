@@ -216,7 +216,11 @@ function updateItemCost(itemId, itemCostElement) {
     let currentCost = parseInt(localStorage.getItem(itemId));
     console.log(`Current cost for ${itemId}:`, currentCost);
     if (!isNaN(currentCost)) {
-        let newCost = Math.floor(currentCost * 1.5);
+        if (itemId === "Haki") {
+            newCost = currentCost * 10;
+        } else {
+            newCost = Math.floor(currentCost * 1.5);
+        }
         localStorage.setItem(itemId, newCost);
         itemCostElement.innerText = `Cost: ${newCost} Blossoms`;
     } else {
